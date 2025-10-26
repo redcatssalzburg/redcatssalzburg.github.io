@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training & Mitgliedschaft - RedCats Salzburg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #B91C1C, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .schedule-item {
+            border-left: 4px solid #B91C1C;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+        }
+        .facility-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="navigation"></div>
+
+    <!-- Header Section -->
+    <section class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-4">Training & Mitgliedschaft</h1>
+            <p class="text-xl max-w-3xl mx-auto">
+                Werden Sie Teil unserer Volleyball-Community. Professionelles Training, moderne Anlagen und eine unterstützende Gemeinschaft erwarten Sie.
+            </p>
+        </div>
+    </section>
+
+    <!-- Training Schedule -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Trainingszeiten</h2>
+                <p class="text-xl text-gray-600">Regelmäßige Trainingseinheiten für alle Leistungsstufen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="animate-on-scroll">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Herren-Team</h3>
+                    <div class="space-y-4">
+                        <div class="schedule-item p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900">Technik-Training</h4>
+                                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm">2h</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">Dienstag & Donnerstag | 18:00 - 20:00 Uhr</p>
+                            <p class="text-sm text-gray-500">Fokus auf Spieltechnik, Taktik und Mannschaftsübungen</p>
+                        </div>
+
+                        <div class="schedule-item p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900">Kraft & Kondition</h4>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm">1.5h</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">Montag & Mittwoch | 19:00 - 20:30 Uhr</p>
+                            <p class="text-sm text-gray-500">Fitnesstraining, Kraftaufbau und Ausdauer</p>
+                        </div>
+
+                        <div class="schedule-item p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900">Spielvorbereitung</h4>
+                                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm">2h</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">Freitag | 17:00 - 19:00 Uhr</p>
+                            <p class="text-sm text-gray-500">Taktikbesprechung, Gegneranalyse und Spielformen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll" style="animation-delay: 0.1s;">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Damen-Team</h3>
+                    <div class="space-y-4">
+                        <div class="schedule-item p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900">Technik-Training</h4>
+                                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm">2h</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">Montag & Mittwoch | 18:30 - 20:30 Uhr</p>
+                            <p class="text-sm text-gray-500">Spieltechnik, Taktik und Mannschaftskoordination</p>
+                        </div>
+
+                        <div class="schedule-item p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900">Athletik-Training</h4>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm">1.5h</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">Dienstag & Donnerstag | 18:00 - 19:30 Uhr</p>
+                            <p class="text-sm text-gray-500">Koordination, Schnelligkeit und spezifische Kraft</p>
+                        </div>
+
+                        <div class="schedule-item p-6 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="text-lg font-semibold text-gray-900">Taktik-Training</h4>
+                                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm">2h</span>
+                            </div>
+                            <p class="text-gray-600 mb-2">Freitag | 17:30 - 19:30 Uhr</p>
+                            <p class="text-sm text-gray-500">Spielformen, Gegneranalyse und Strategie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center animate-on-scroll" style="animation-delay: 0.2s;">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Jugend-Training</h3>
+                    <p class="text-gray-600 mb-6">Für Nachwuchsspieler von 12-18 Jahren bieten wir spezielle Trainingsgruppen an.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-gray-900 mb-2">U18 Team</h4>
+                            <p class="text-sm text-gray-600">Samstag 14:00 - 16:00 Uhr</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-gray-900 mb-2">U15 Team</h4>
+                            <p class="text-sm text-gray-600">Samstag 10:00 - 12:00 Uhr</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-gray-900 mb-2">U12 Team</h4>
+                            <p class="text-sm text-gray-600">Sonntag 10:00 - 11:30 Uhr</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Facilities -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Unsere Anlagen</h2>
+                <p class="text-xl text-gray-600">Modernste Trainingsmöglichkeiten für optimale Entwicklung.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <img src="resources/training-facility.jpg" alt="Trainingshalle" class="w-full h-96 object-cover rounded-xl shadow-lg">
+                </div>
+                <div class="animate-on-scroll" style="animation-delay: 0.1s;">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Haupttrainingshalle</h3>
+                    <div class="space-y-4">
+                        <div class="facility-card p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-900">3 Volleyball-Felder</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Mit professionellen Maßen und hochwertigem Bodenbelag</p>
+                        </div>
+
+                        <div class="facility-card p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-900">Modernste Ausstattung</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Trainingsgeräte, Bälle und Videoanalyse-Systeme</p>
+                        </div>
+
+                        <div class="facility-card p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-900">Fitness-Bereich</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Voll ausgestatteter Kraft- und Konditionsraum</p>
+                        </div>
+
+                        <div class="facility-card p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-semibold text-gray-900">Umkleide & Sanitärbereiche</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">Moderne Dusch- und Umkleideeinrichtungen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Information -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Mitglied werden</h2>
+                <p class="text-xl text-gray-600">Starten Sie Ihre Volleyball-Reise bei den RedCats Salzburg.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-red-600 to-red-700 text-white p-8 rounded-xl card-hover animate-on-scroll">
+                    <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center">Aktives Mitglied</h3>
+                    <div class="text-center mb-6">
+                        <div class="text-4xl font-bold mb-2">€45</div>
+                        <div class="text-red-200">pro Monat</div>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Alle Trainingseinheiten
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Professionelles Coaching
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Spielkleidung & Ausrüstung
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Teilnahme an Wettkämpfen
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-xl card-hover animate-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center">Jugend-Mitglied</h3>
+                    <div class="text-center mb-6">
+                        <div class="text-4xl font-bold mb-2">€25</div>
+                        <div class="text-orange-200">pro Monat</div>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Altersgerechtes Training
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Qualifizierte Jugendtrainer
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Teilnahme an Jugendturnieren
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Eltern-Workshops
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-700 to-gray-800 text-white p-8 rounded-xl card-hover animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center">Förder-Mitglied</h3>
+                    <div class="text-center mb-6">
+                        <div class="text-4xl font-bold mb-2">€15</div>
+                        <div class="text-gray-300">pro Monat</div>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Unterstützung des Vereins
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Exklusive Vereins-Events
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            RedCats Fan-Paket
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Rabatte bei Partnern
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="bg-gray-50 p-8 rounded-xl animate-on-scroll">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Jetzt Mitglied werden</h3>
+                <form id="membership-form" class="max-w-2xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Vorname *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nachname *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Geburtsdatum *</label>
+                            <input type="date" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Geschlecht</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                                <option value="">Bitte wählen</option>
+                                <option value="female">Weiblich</option>
+                                <option value="male">Männlich</option>
+                                <option value="other">Divers</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Mitgliedschaftsart *</label>
+                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <option value="">Bitte wählen</option>
+                            <option value="active">Aktives Mitglied (€45/Monat)</option>
+                            <option value="youth">Jugend-Mitglied (€25/Monat)</option>
+                            <option value="supporter">Förder-Mitglied (€15/Monat)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Vorerfahrung</label>
+                        <textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Haben Sie bereits Volleyball-Erfahrung? Wenn ja, wie viele Jahre und auf welchem Level?"></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="flex items-center">
+                            <input type="checkbox" required class="rounded border-gray-300 text-red-600 focus:ring-red-500">
+                            <span class="ml-2 text-sm text-gray-700">Ich akzeptiere die Vereinsstatuten und die Datenschutzbestimmungen *</span>
+                        </label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                            Anmeldung absenden
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Häufige Fragen</h2>
+                <p class="text-xl text-gray-600">Antworten auf die wichtigsten Fragen zum Training und zur Mitgliedschaft.</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden animate-on-scroll">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Brauche ich Vorerfahrung um mitzumachen?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Nein, bei uns können Anfänger und Fortgeschrittene gleichermaßen mitmachen. Wir bieten für jedes Level passende Trainingsgruppen und unser erfahrenes Trainerteam passt die Übungen individuell an Ihre Fähigkeiten an.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden animate-on-scroll" style="animation-delay: 0.1s;">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Was benötige ich für das Training?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Sie benötigen nur Sportkleidung und Hallensportschuhe. Bälle und alle anderen Trainingsmaterialien stellen wir zur Verfügung. Aktive Mitglieder erhalten zusätzlich offizielle RedCats Sportkleidung.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden animate-on-scroll" style="animation-delay: 0.2s;">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Kann ich eine Schnupperstunde machen?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Absolut! Wir bieten jedem Interessierten zwei kostenlose Schnuppertrainings an, um sich einen Eindruck von unserem Training und der Gemeinschaft zu machen. Einfach anmelden und mitbringen.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden animate-on-scroll" style="animation-delay: 0.3s;">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Wie läuft die Aufnahme bei einem Team?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Nach den Schnupperstunden findet ein kurzes Aufnahmegespräch statt, um Ihre Ziele und Erfahrung einzuschätzen. Dann werden Sie einer passenden Trainingsgruppe zugewiesen und können sofort starten.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden animate-on-scroll" style="animation-delay: 0.4s;">
+                    <button class="faq-toggle w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
+                        <h3 class="text-lg font-semibold text-gray-900">Gibt es eine Mindestvertragslaufzeit?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Die Mitgliedschaft kann monatlich gekündigt werden. Wir vertrauen auf die Qualität unseres Angebots und wollen flexibel bleiben. Es gibt auch ermäßigte Jahresmitgliedschaften.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="components.js"></script>
+    <script>
+        // Navigation und Footer einfügen
+        document.getElementById('navigation').innerHTML = createNavigation();
+        document.getElementById('footer').innerHTML = createFooter();
+
+        // FAQ Toggle Funktionalität
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Formular-Validierung und -Sendung
+        document.getElementById('membership-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Hier würde normalerweise die Formular-Daten an den Server gesendet
+            // Für dieses Beispiel zeigen wir nur eine Erfolgsmeldung
+            
+            const formData = new FormData(e.target);
+            const membershipType = formData.get('membership-type');
+            
+            // Animation für Erfolgsmeldung
+            const form = e.target;
+            form.innerHTML = `
+                <div class="text-center py-12">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Anmeldung erfolgreich!</h3>
+                    <p class="text-gray-600 mb-6">Vielen Dank für Ihre Anmeldung. Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
+                    <button onclick="location.reload()" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                        Neue Anmeldung
+                    </button>
+                </div>
+            `;
+        });
+
+        // Scroll-Animationen initialisieren
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

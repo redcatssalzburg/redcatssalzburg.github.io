@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kader - RedCats Salzburg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #B91C1C, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .player-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+            backdrop-filter: blur(10px);
+        }
+        .position-libero { border-left: 4px solid #3B82F6; }
+        .position-aufbauspieler { border-left: 4px solid #10B981; }
+        .position- diagonalspieler { border-left: 4px solid #F59E0B; }
+        .position-mittelblocker { border-left: 4px solid #EF4444; }
+        .position-aussenangriff { border-left: 4px solid #8B5CF6; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="navigation"></div>
+
+    <!-- Header Section -->
+    <section class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-4">Unser Kader</h1>
+            <p class="text-xl max-w-3xl mx-auto">
+                Lernen Sie unser professionelles Team kennen - talentierte Athleten, die mit Leidenschaft und Teamgeist für die RedCats spielen.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-red-600 text-white font-semibold transition-all duration-300" data-filter="all">
+                    Alle Spieler
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="aufbauspieler">
+                    Aufbauspieler
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="diagonalspieler">
+                    Diagonalspieler
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="mittelblocker">
+                    Mittelblocker
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="aussenangriff">
+                    Außenangriff
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 transition-all duration-300" data-filter="libero">
+                    Libero
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Players Grid -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="players-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <!-- Player 1 -->
+                <div class="player-card position-aufbauspieler rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="aufbauspieler">
+                    <div class="relative">
+                        <img src="resources/player-1.jpg" alt="Sarah Müller" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                            Kapitän
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sarah Müller</h3>
+                        <p class="text-sm text-gray-600 mb-3">Aufbauspielerin</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">26 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">178 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2020</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('sarah-mueller')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 2 -->
+                <div class="player-card position-diagonalspieler rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="diagonalspieler" style="animation-delay: 0.1s;">
+                    <div class="relative">
+                        <img src="resources/player-2.jpg" alt="Markus Weber" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Markus Weber</h3>
+                        <p class="text-sm text-gray-600 mb-3">Diagonalspieler</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">24 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">195 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2021</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('markus-weber')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-card position-mittelblocker rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="mittelblocker" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <img src="resources/player-3.jpg" alt="Lisa Fischer" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Lisa Fischer</h3>
+                        <p class="text-sm text-gray-600 mb-3">Mittelblockerin</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">23 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">188 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2022</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('lisa-fischer')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 4 -->
+                <div class="player-card position-aussenangriff rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="aussenangriff" style="animation-delay: 0.3s;">
+                    <div class="relative">
+                        <img src="resources/player-4.jpg" alt="Thomas Wagner" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Thomas Wagner</h3>
+                        <p class="text-sm text-gray-600 mb-3">Außenangriff</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">25 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">192 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2020</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('thomas-wagner')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-card position-libero rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="libero" style="animation-delay: 0.4s;">
+                    <div class="relative">
+                        <img src="resources/player-1.jpg" alt="Anna Schmidt" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Anna Schmidt</h3>
+                        <p class="text-sm text-gray-600 mb-3">Libero</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">22 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">170 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2023</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('anna-schmidt')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 6 -->
+                <div class="player-card position-aussenangriff rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="aussenangriff" style="animation-delay: 0.5s;">
+                    <div class="relative">
+                        <img src="resources/player-2.jpg" alt="Julia Bauer" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Julia Bauer</h3>
+                        <p class="text-sm text-gray-600 mb-3">Außenangriff</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">24 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">182 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2021</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('julia-bauer')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 7 -->
+                <div class="player-card position-mittelblocker rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="mittelblocker" style="animation-delay: 0.6s;">
+                    <div class="relative">
+                        <img src="resources/player-3.jpg" alt="David Klein" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">David Klein</h3>
+                        <p class="text-sm text-gray-600 mb-3">Mittelblocker</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">26 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">202 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2019</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('david-klein')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Player 8 -->
+                <div class="player-card position-diagonalspieler rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" data-position="diagonalspieler" style="animation-delay: 0.7s;">
+                    <div class="relative">
+                        <img src="resources/player-4.jpg" alt="Laura Hoffmann" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Laura Hoffmann</h3>
+                        <p class="text-sm text-gray-600 mb-3">Diagonalspielerin</p>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between">
+                                <span>Alter:</span>
+                                <span class="font-semibold">23 Jahre</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Größe:</span>
+                                <span class="font-semibold">185 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Nationalität:</span>
+                                <span class="font-semibold">Österreich</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Seit:</span>
+                                <span class="font-semibold">2022</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-xs text-gray-500">Erfahrung:</span>
+                                <div class="flex space-x-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 font-semibold text-sm" onclick="showPlayerDetails('laura-hoffmann')">
+                                Details →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Stats -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Team Statistiken</h2>
+                <p class="text-xl text-gray-600">Ein Überblick über unsere Mannschaftszusammensetzung.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center animate-on-scroll">
+                    <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">12</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Aktive Spieler</h3>
+                    <p class="text-gray-600">In der aktuellen Saison</p>
+                </div>
+
+                <div class="text-center animate-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">25</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Durchschnittsalter</h3>
+                    <p class="text-gray-600">Jahre jung und dynamisch</p>
+                </div>
+
+                <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">185</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Durchschnittliche Größe</h3>
+                    <p class="text-gray-600">cm - optimal für Volleyball</p>
+                </div>
+
+                <div class="text-center animate-on-scroll" style="animation-delay: 0.3s;">
+                    <div class="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">5</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Jahre Erfahrung</h3>
+                    <p class="text-gray-600">Durchschnittliche Vereinszugehörigkeit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainer Team -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Trainer Team</h2>
+                <p class="text-xl text-gray-600">Unsere erfahrenen Trainer und Betreuer.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
+                    <div class="h-48 bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Michael Schneider</h3>
+                            <p class="text-red-200">Cheftrainer</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">15 Jahre Erfahrung als Volleyballtrainer, ehemaliger Bundesligaspieler und zertifizierter Trainer Level 3.</p>
+                        <div class="text-sm text-gray-500">
+                            <p>📧 m.schneider@redcats-salzburg.at</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Andrea Mayer</h3>
+                            <p class="text-orange-200">Co-Trainerin</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Spezialisiert auf Technik- und Spielaufbau, ehemalige Nationalspielerin mit 12 Jahren Trainererfahrung.</p>
+                        <div class="text-sm text-gray-500">
+                            <p>📧 a.mayer@redcats-salzburg.at</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold">Robert Huber</h3>
+                            <p class="text-gray-300">Betreuer</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Verantwortlich für Fitness, Ernährung und medizinische Betreuung. Sporttherapeut mit Schwerpunkt Prävention.</p>
+                        <div class="text-sm text-gray-500">
+                            <p>📧 r.huber@redcats-salzburg.at</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Player Details Modal -->
+    <div id="player-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 id="modal-player-name" class="text-2xl font-bold text-gray-900"></h2>
+                    <button onclick="closePlayerModal()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="modal-content" class="space-y-4">
+                    <!-- Content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="components.js"></script>
+    <script>
+        // Navigation und Footer einfügen
+        document.getElementById('navigation').innerHTML = createNavigation();
+        document.getElementById('footer').innerHTML = createFooter();
+
+        // Filter-Funktionalität
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const playerCards = document.querySelectorAll('.player-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Aktiven Button aktualisieren
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-red-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                button.classList.add('active', 'bg-red-600', 'text-white');
+                button.classList.remove('bg-gray-200', 'text-gray-700');
+
+                // Karten filtern
+                playerCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-position') === filter) {
+                        card.style.display = 'block';
+                        anime({
+                            targets: card,
+                            opacity: [0, 1],
+                            translateY: [30, 0],
+                            duration: 600,
+                            easing: 'easeOutQuart'
+                        });
+                    } else {
+                        anime({
+                            targets: card,
+                            opacity: [1, 0],
+                            translateY: [0, -30],
+                            duration: 300,
+                            easing: 'easeInQuart',
+                            complete: () => {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+
+        // Spieler-Details Modal
+        function showPlayerDetails(playerId) {
+            const modal = document.getElementById('player-modal');
+            const modalName = document.getElementById('modal-player-name');
+            const modalContent = document.getElementById('modal-content');
+
+            // Spielerdaten (in einer echten Anwendung würden diese aus einer Datenbank kommen)
+            const playerData = {
+                'sarah-mueller': {
+                    name: 'Sarah Müller',
+                    position: 'Aufbauspielerin & Kapitän',
+                    age: 26,
+                    height: '178 cm',
+                    nationality: 'Österreich',
+                    since: 2020,
+                    number: 1,
+                    strengths: ['Spielübersicht', 'Führungsqualitäten', 'Technik'],
+                    achievements: ['Meisterschaft 2022', 'Beste Aufbauspielerin 2023'],
+                    bio: 'Als Kapitänin und erfahrene Aufbauspielerin ist Sarah das Herzstück unseres Teams. Ihre ruhige Art und taktische Intelligenz machen sie zur idealen Anführerin auf und neben dem Feld.'
+                },
+                'markus-weber': {
+                    name: 'Markus Weber',
+                    position: 'Diagonalspieler',
+                    age: 24,
+                    height: '195 cm',
+                    nationality: 'Österreich',
+                    since: 2021,
+                    number: 2,
+                    strengths: ['Sprungkraft', 'Angriff', 'Block'],
+                    achievements: ['Aufsteiger des Jahres 2022'],
+                    bio: 'Markus bringt als Diagonalspieler die nötige Power in unser Angriffsspiel. Mit seiner beeindruckenden Größe und Athletik ist er ein gefürchteter Gegner an der Netzkante.'
+                }
+                // Weitere Spielerdaten hier...
+            };
+
+            const player = playerData[playerId];
+            if (player) {
+                modalName.textContent = player.name;
+                modalContent.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Spielerinformationen</h3>
+                            <div class="space-y-2">
+                                <p><strong>Position:</strong> ${player.position}</p>
+                                <p><strong>Alter:</strong> ${player.age} Jahre</p>
+                                <p><strong>Größe:</strong> ${player.height}</p>
+                                <p><strong>Nationalität:</strong> ${player.nationality}</p>
+                                <p><strong>Vereinszugehörigkeit:</strong> Seit ${player.since}</p>
+                                <p><strong>Rückennummer:</strong> ${player.number}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3">Stärken</h3>
+                            <ul class="list-disc list-inside space-y-1 mb-4">
+                                ${player.strengths.map(strength => `<li>${strength}</li>`).join('')}
+                            </ul>
+                            <h3 class="text-lg font-semibold mb-3">Erfolge</h3>
+                            <ul class="list-disc list-inside space-y-1">
+                                ${player.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold mb-3">Biografie</h3>
+                        <p class="text-gray-600">${player.bio}</p>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closePlayerModal() {
+            document.getElementById('player-modal').classList.add('hidden');
+        }
+
+        // Modal schließen bei Klick außerhalb
+        document.getElementById('player-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'player-modal') {
+                closePlayerModal();
+            }
+        });
+
+        // Scroll-Animationen initialisieren
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
