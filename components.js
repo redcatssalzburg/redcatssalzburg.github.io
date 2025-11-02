@@ -70,8 +70,7 @@ function createFooter() {
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
                     <div class="space-y-2 text-gray-300">
-                        <p>📧 info@redcats-salzburg.at</p>
-                        <p>📞 +43 662 123456</p>
+                        <p>📧 redcatssalzburg@gmail.com</p>
                         <p>📍 Salzburg, Austria</p>
                     </div>
                 </div>
