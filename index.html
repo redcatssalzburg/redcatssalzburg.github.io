@@ -2,7 +2,35 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RedCats Salzburg – Offizieller Volleyballverein in Salzburg</title>
+<meta name="description" content="Willkommen bei den RedCats Salzburg – dem Volleyballverein für Leidenschaft, Teamgeist und Fair Play. Erfahre alles über unseren Verein, Training und Mitgliedschaft.">
+<meta name="keywords" content="Volleyball Salzburg, Volleyballverein, RedCats Salzburg, Volleyball Training Salzburg">
+<meta name="author" content="RedCats Salzburg">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="RedCats Salzburg – Offizieller Volleyballverein in Salzburg">
+<meta property="og:description" content="Willkommen bei den RedCats Salzburg – alles zu Verein, Training und Mitgliedschaft.">
+<meta property="og:image" content="https://redcatssalzburg.com/">
+<meta property="og:url" content="https://redcatssalzburg.com/">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RedCats Salzburg – Offizieller Volleyballverein in Salzburg">
+<meta name="twitter:description" content="Willkommen bei den RedCats Salzburg – alles zu Verein, Training und Mitgliedschaft.">
+<meta name="twitter:image" content="https://redcatssalzburg.com/">
+
+<!-- Canonical (wichtig wenn mehrere URLs) -->
+<link rel="canonical" href="https://redcatssalzburg.com/">
+<link rel="canonical" href="https://redcatssalzburg.com/training.html">
+<link rel="canonical" href="https://redcatssalzburg.com/sponsors.html">
+<link rel="canonical" href="https://redcatssalzburg.com/about.html">
+
+ 
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedCats Salzburg - Volleyball Verein</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -11,12 +39,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
         .hero-bg {
             background: linear-gradient(135deg, rgba(185, 28, 28, 0.8), rgba(249, 115, 22, 0.6)), url('resources/hero-action.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+        
         .animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
         }
@@ -43,6 +73,11 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        .content-section {
+            position: relative;
+            z-index: 10;
+            background: white;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -56,10 +91,10 @@
                 RedCats Salzburg
             </h1>
             <p class="text-xl md:text-2xl mb-8 font-light animate-fade-in-up" style="animation-delay: 0.2s;">
-                Leidenschaft • Teamgeist • Erfolg
+                Leidenschaft • Teamgeist • Spaß
             </p>
             <p class="text-lg mb-12 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s;">
-                Der führende Volleyball-Verein in Salzburg. Wir verbinden Spitzensport mit Gemeinschaft und entwickeln Talente für die Zukunft.
+                
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.6s;">
                 <a href="training.html" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
@@ -123,48 +158,6 @@
         </div>
     </section>
 
-    <!-- Aktuelle News -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Aktuelles</h2>
-                <p class="text-xl text-gray-600">Bleiben Sie informiert über die neuesten Entwicklungen und Events.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll">
-                    <div class="h-48 bg-red-600"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-red-600 font-semibold mb-2">26. Oktober 2024</div>
-                        <h3 class="text-xl font-bold mb-3">Saisonauftakt 2024/25</h3>
-                        <p class="text-gray-600 mb-4">Unsere Teams starten voller Energie in die neue Saison. Die Vorbereitung verlief erfolgreich und wir sind bereit für neue Herausforderungen.</p>
-                        <a href="#" class="text-red-600 hover:text-red-700 font-semibold">Weiterlesen →</a>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" style="animation-delay: 0.1s;">
-                    <div class="h-48 bg-orange-500"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-orange-500 font-semibold mb-2">20. Oktober 2024</div>
-                        <h3 class="text-xl font-bold mb-3">Neues Trainingscamp</h3>
-                        <p class="text-gray-600 mb-4">Unser neues Trainingscamp bietet modernste Einrichtungen und optimale Bedingungen für die Entwicklung unserer Spieler.</p>
-                        <a href="#" class="text-orange-500 hover:text-orange-600 font-semibold">Weiterlesen →</a>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover animate-on-scroll" style="animation-delay: 0.2s;">
-                    <div class="h-48 bg-red-600"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-red-600 font-semibold mb-2">15. Oktober 2024</div>
-                        <h3 class="text-xl font-bold mb-3">Nachwuchs-Talente gesucht</h3>
-                        <p class="text-gray-600 mb-4">Wir suchen motivierte junge Spielerinnen und Spieler für unser Nachwuchsprogramm. Jetzt bewerben und Teil unserer Erfolgsgeschichte werden!</p>
-                        <a href="#" class="text-red-600 hover:text-red-700 font-semibold">Weiterlesen →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <!-- Schnellzugriff -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -173,18 +166,8 @@
                 <p class="text-xl text-gray-600">Direkt zu den wichtigsten Bereichen unserer Website.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="kader.html" class="group bg-gradient-to-br from-red-600 to-red-700 text-white p-8 rounded-xl text-center card-hover animate-on-scroll">
-                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Unser Kader</h3>
-                    <p class="text-sm opacity-90">Lerne unser Team kennen</p>
-                </a>
-
-                <a href="training.html" class="group bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-xl text-center card-hover animate-on-scroll" style="animation-delay: 0.1s;">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="training.html" class="group bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-xl text-center card-hover animate-on-scroll">
                     <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors duration-300">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -194,7 +177,7 @@
                     <p class="text-sm opacity-90">Trainingszeiten & Beitritt</p>
                 </a>
 
-                <a href="sponsors.html" class="group bg-gradient-to-br from-gray-700 to-gray-800 text-white p-8 rounded-xl text-center card-hover animate-on-scroll" style="animation-delay: 0.2s;">
+                <a href="sponsors.html" class="group bg-gradient-to-br from-gray-700 to-gray-800 text-white p-8 rounded-xl text-center card-hover animate-on-scroll" style="animation-delay: 0.1s;">
                     <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors duration-300">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -204,7 +187,7 @@
                     <p class="text-sm opacity-90">Unsere Partner & Unterstützer</p>
                 </a>
 
-                <a href="about.html" class="group bg-gradient-to-br from-red-600 to-orange-500 text-white p-8 rounded-xl text-center card-hover animate-on-scroll" style="animation-delay: 0.3s;">
+                <a href="about.html" class="group bg-gradient-to-br from-red-600 to-orange-500 text-white p-8 rounded-xl text-center card-hover animate-on-scroll" style="animation-delay: 0.2s;">
                     <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors duration-300">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -264,17 +247,29 @@
 
         // Initialisierung nach DOM-Load
         document.addEventListener('DOMContentLoaded', () => {
-            // Füge Animationen für Scroll-Elemente hinzu
+            // Füge Animationen für Scroll-Elemente hinzu mit besserem Spacing
             const animateElements = document.querySelectorAll('.animate-on-scroll');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-fade-in-up');
+                        // Verhindere, dass Elemente sich stapeln
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px' // Mehr Abstand bevor Animation startet
+            });
 
-            animateElements.forEach(el => observer.observe(el));
+            animateElements.forEach(el => {
+                // Initiale Styles setzen
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
         });
     </script>
 </body>
