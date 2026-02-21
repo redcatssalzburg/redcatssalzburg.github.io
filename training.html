@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Training & Mitgliedschaft – RedCats Salzburg Volleyballverein</title>
+    <meta name="description" content="Trainingszeiten, Standorte und Mitgliedschaft bei den RedCats Salzburg. Komm vorbei und werde Teil unseres Volleyballteams – egal ob Anfänger oder Profi.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Training & Mitgliedschaft – RedCats Salzburg">
+    <meta property="og:description" content="Infos zu Trainingszeiten, Orten und wie du Mitglied wirst.">
+    <meta property="og:image" content="https://redcatssalzburg.com/favicon.png">
+    <link rel="canonical" href="https://redcatssalzburg.com/training.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .page-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+        .main-content { flex: 1; }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #B91C1C, #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .schedule-item {
+            border-left: 4px solid #B91C1C;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,1));
+            transition: all 0.3s ease;
+        }
+        .schedule-item:hover {
+            border-left-width: 6px;
+            padding-left: 1.4rem;
+        }
+        .facility-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,1));
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .facility-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .trainer-card {
+            overflow: hidden;
+            position: relative;
+        }
+        .trainer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #B91C1C, #F97316);
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-content.active {
+            max-height: 500px;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-icon.active {
+            transform: rotate(180deg);
+        }
+        .price-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .price-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="msapplication-TileImage" content="favicon.png">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "RedCats Salzburg Training",
+        "description": "Volleyball Training in Salzburg",
+        "url": "https://redcatssalzburg.com/training.html",
+        "logo": "https://redcatssalzburg.com/favicon.png",
+        "sport": "Volleyball"
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <div class="page-wrapper">
+        <div id="navigation"></div>
+
+        <main class="main-content">
+            <!-- Header Section -->
+            <section class="bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-24 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <circle cx="80" cy="20" r="40" fill="white" opacity="0.1"/>
+                        <circle cx="20" cy="80" r="30" fill="white" opacity="0.1"/>
+                    </svg>
+                </div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up">Training & Mitgliedschaft</h1>
+                    <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        Werde Teil unserer Volleyball-Community. Professionelles Training, moderne Anlagen und eine unterstützende Gemeinschaft erwarten dich.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Training Schedule -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 animate-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Trainingszeiten</h2>
+                        <p class="text-xl text-gray-600">Regelmäßige Trainingseinheiten für alle Leistungsstufen.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <!-- Herren-Team -->
+                        <div class="animate-on-scroll">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                                <span class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
+                                </span>
+                                Herren-Team
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="schedule-item p-6 rounded-xl shadow-md">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h4 class="text-lg font-semibold text-gray-900">Kader-Training</h4>
+                                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">2,75h</span>
+                                    </div>
+                                    <p class="text-gray-700 mb-2 flex items-center">
+                                        <svg class="w-4 h-4 mr-2 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        Donnerstag | 19:00 - 21:45 Uhr
+                                    </p>
+                                    <p class="text-sm text-gray-500">Fokus auf Spieltechnik, Taktik und Mannschaftsübungen</p>
+                                </div>
+
+                                <div class="schedule-item p-6 rounded-xl shadow-md">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h4 class="text-lg font-semibold text-gray-900">Spielvorbereitung</h4>
+                                        <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">2h</span>
+                                    </div>
+                                    <p class="text-gray-700 mb-2 flex items-center">
+                                        <svg class="w-4 h-4 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        Freitag | 17:00 - 19:00 Uhr
+                                    </p>
+                                    <p class="text-sm text-gray-500">Taktikbesprechung, Gegneranalyse und Spielformen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mixed-Team -->
+                        <div class="animate-on-scroll" style="animation-delay: 0.1s;">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                                <span class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </span>
+                                Mixed-Team
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="schedule-item p-6 rounded-xl shadow-md border-l-orange-500">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h4 class="text-lg font-semibold text-gray-900">Coming Soon!</h4>
+                                        <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">2h</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-3">
+                                        Bei Interesse bitte WhatsApp-Community beitreten oder E-Mail schreiben!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Jugend-Training -->
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-8 flex items-center">
+                                <span class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </span>
+                                Jugend-Training
+                            </h3>
+                            <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
+                                <p class="text-gray-700 leading-relaxed">
+                                    Wir sind aktuell dabei, ein Jugendteam aufzubauen. Falls du Interesse hast, dein Kind für das Jugendtraining anzumelden, kontaktiere uns gerne per E-Mail oder tritt der entsprechenden Gruppe in unserer WhatsApp-Community bei. Wir freuen uns auf deine Nachricht!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Training Facilities -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 animate-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Unsere Trainingsanlagen</h2>
+                        <p class="text-xl text-gray-600">Moderne Sporthallen in zentraler Lage.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                        <div class="facility-card p-6 rounded-xl shadow-md animate-on-scroll">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-900 text-lg">HTBLuVA Salzburg</h4>
+                            </div>
+                            <p class="text-gray-600 flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Itzlinger Hauptstraße 30, 5020 Salzburg
+                            </p>
+                        </div>
+
+                        <div class="facility-card p-6 rounded-xl shadow-md animate-on-scroll" style="animation-delay: 0.1s;">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-900 text-lg">BRG Salzburg</h4>
+                            </div>
+                            <p class="text-gray-600 flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Akademiestraße 19, 5020 Salzburg
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trainer Team -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 animate-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Trainer-Team</h2>
+                        <p class="text-xl text-gray-600">Unsere erfahrenen Trainer und Betreuer.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="trainer-card bg-white rounded-2xl shadow-lg card-hover animate-on-scroll">
+                            <div class="h-52 bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-20">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <circle cx="90" cy="10" r="30" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text-center text-white relative z-10">
+                                    <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold">Tobias Steiner</h3>
+                                    <p class="text-red-200 font-medium">Haupttrainer</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-600 mb-4">Langjährige Erfahrung als Volleyballtrainer – zertifizierter Trainer der höchsten Stufe.</p>
+                            </div>
+                        </div>
+
+                        <div class="trainer-card bg-white rounded-2xl shadow-lg card-hover animate-on-scroll" style="animation-delay: 0.1s;">
+                            <div class="h-52 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-20">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <circle cx="90" cy="10" r="30" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text-center text-white relative z-10">
+                                    <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold">Raphael Salfinger</h3>
+                                    <p class="text-orange-200 font-medium">Co-Trainer</p>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="text-sm text-gray-500 flex items-center">
+                                    <svg class="w-4 h-4 mr-2 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    raphael@onlinetalk.net
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Information -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 animate-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Mitglied werden</h2>
+                        <p class="text-xl text-gray-600">Starte deine Volleyball-Reise bei den RedCats Salzburg.</p>
+                    </div>
+
+                    <div class="max-w-md mx-auto mb-12">
+                        <div class="price-card bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-2xl shadow-xl card-hover animate-on-scroll">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-2">Mitgliedschaft</h3>
+                                <div class="text-5xl font-bold mb-2">€20</div>
+                                <div class="text-orange-200 mb-6">pro Monat</div>
+                                <ul class="space-y-3 text-left text-sm mb-8">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Qualifizierte Trainer
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Teilnahme an Turnieren
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Training des entsprechenden Niveaus
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Registration -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Jetzt Mitglied werden</h3>
+                        <div class="text-center space-y-4">
+                            <a href="https://formular.vereinsplaner.com/4254e9ed-b99b-4925-a6f1-108bc74d1fc7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Mitglied werden
+                            </a>
+                            <div class="pt-4 border-t border-gray-200">
+                                <p class="text-sm font-medium text-gray-700 mb-2">WhatsApp-Community:</p>
+                                <a href="https://chat.whatsapp.com/GtuefN4rpIZKon3AUNSOvR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold transition-colors">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                    </svg>
+                                    Gruppe beitreten
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="py-20 bg-white">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 animate-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Häufige Fragen</h2>
+                        <p class="text-xl text-gray-600">Antworten auf die wichtigsten Fragen zum Training und zur Mitgliedschaft.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-xl overflow-hidden animate-on-scroll">
+                            <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200">
+                                <h3 class="text-lg font-semibold text-gray-900 pr-4">Brauche ich Vorerfahrung, um mitzumachen?</h3>
+                                <svg class="faq-icon w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-content px-6 pb-5">
+                                <p class="text-gray-600">Nein, bei uns können Anfänger und Fortgeschrittene gleichermaßen mitmachen. Wir bieten für jedes Level passende Trainingsgruppen und unser erfahrenes Trainerteam passt die Übungen individuell an deine Fähigkeiten an.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden animate-on-scroll" style="animation-delay: 0.1s;">
+                            <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200">
+                                <h3 class="text-lg font-semibold text-gray-900 pr-4">Was benötige ich für das Training?</h3>
+                                <svg class="faq-icon w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-content px-6 pb-5">
+                                <p class="text-gray-600">Du benötigst nur Sportkleidung und Hallensportschuhe. Bälle und alle anderen Trainingsmaterialien stellen wir zur Verfügung. Aktive Mitglieder erhalten zusätzlich offizielle RedCats-Sportkleidung.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden animate-on-scroll" style="animation-delay: 0.2s;">
+                            <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200">
+                                <h3 class="text-lg font-semibold text-gray-900 pr-4">Kann ich eine Schnupperstunde machen?</h3>
+                                <svg class="faq-icon w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-content px-6 pb-5">
+                                <p class="text-gray-600">Absolut! Wir bieten jedem Interessierten zwei kostenlose Schnuppertrainings an, um sich einen Eindruck von unserem Training und der Gemeinschaft zu machen. Einfach anmelden und vorbeikommen.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden animate-on-scroll" style="animation-delay: 0.3s;">
+                            <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200">
+                                <h3 class="text-lg font-semibold text-gray-900 pr-4">Wie läuft die Aufnahme in ein Team?</h3>
+                                <svg class="faq-icon w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-content px-6 pb-5">
+                                <p class="text-gray-600">Nach den Schnupperstunden findet ein kurzes Aufnahmegespräch statt, um deine Ziele und Erfahrung einzuschätzen. Danach wirst du einer passenden Trainingsgruppe zugewiesen und kannst sofort starten.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl overflow-hidden animate-on-scroll" style="animation-delay: 0.4s;">
+                            <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200">
+                                <h3 class="text-lg font-semibold text-gray-900 pr-4">Gibt es eine Mindestvertragslaufzeit?</h3>
+                                <svg class="faq-icon w-5 h-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="faq-content px-6 pb-5">
+                                <p class="text-gray-600">Die Mitgliedschaft kann monatlich gekündigt werden. Wir vertrauen auf die Qualität unseres Angebots und wollen flexibel bleiben. Es gibt auch ermäßigte Jahresmitgliedschaften.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="footer"></div>
+    </div>
+
+    <script src="components.js"></script>
+    <script>
+        document.getElementById('navigation').innerHTML = createNavigation();
+        document.getElementById('footer').innerHTML = createFooter();
+
+        // FAQ Toggle Funktionalität
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                
+                content.classList.toggle('active');
+                icon.classList.toggle('active');
+            });
+        });
+
+        // Scroll-Animationen
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            animateElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
