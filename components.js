@@ -6,7 +6,6 @@ function createNavigation() {
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <!-- LOGO JETZT KLICKBAR - Link zur Homepage -->
                         <a href="index.html" class="text-2xl font-bold text-red-600 hover:text-red-700 transition-colors duration-200">
                             RedCats Salzburg
                         </a>
@@ -21,7 +20,7 @@ function createNavigation() {
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-red-600 focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-red-600 focus:outline-none p-2">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -29,26 +28,25 @@ function createNavigation() {
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-red-600">Home</a>
-                <a href="training.html" class="block px-3 py-2 text-gray-700 hover:text-red-600">Training</a>
-                <a href="sponsors.html" class="block px-3 py-2 text-gray-700 hover:text-red-600">Sponsoren</a>
-                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-red-600">About Us</a>
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-md transition-colors">Home</a>
+                <a href="training.html" class="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-md transition-colors">Training</a>
+                <a href="sponsors.html" class="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-md transition-colors">Sponsoren</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-md transition-colors">About Us</a>
             </div>
         </div>
     </nav>
     `;
 }
 
-// Footer-Komponente
+// Footer-Komponente - Korrigiert für volle Breite
 function createFooter() {
     return `
-    <footer class="bg-gray-900 text-white w-full">
-        <div class="py-12 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                <div class="col-span-1 md:col-span-2">
-                    <!-- FOOTER LOGO AUCH KLICKBAR -->
+    <footer class="bg-gray-900 text-white w-full mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
                     <h3 class="text-xl font-bold text-red-400 mb-4">
                         <a href="index.html" class="hover:text-red-300 transition-colors duration-200">RedCats Salzburg</a>
                     </h3>
@@ -64,20 +62,48 @@ function createFooter() {
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
                     <div class="space-y-2 text-gray-300">
-                        <p>📧 <a href="mailto:redcatssalzburg@gmail.com" class="hover:text-red-400 transition-colors duration-200">redcatssalzburg@gmail.com</a></p>
-                        <p>📍 Salzburg, Austria</p>
+                        <p class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:redcatssalzburg@gmail.com" class="hover:text-red-400 transition-colors duration-200">redcatssalzburg@gmail.com</a>
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Salzburg, Österreich
+                        </p>
                     </div>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <div class="space-y-2">
-                        <a href="training.html" class="block text-gray-300 hover:text-red-400 transition-colors duration-200">Mitglied werden</a>
-                        <a href="sponsors.html" class="block text-gray-300 hover:text-red-400 transition-colors duration-200">Sponsor werden</a>
-                        <a href="about.html" class="block text-gray-300 hover:text-red-400 transition-colors duration-200">Vereinsgeschichte</a>
+                        <a href="training.html" class="block text-gray-300 hover:text-red-400 transition-colors duration-200 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            Mitglied werden
+                        </a>
+                        <a href="sponsors.html" class="block text-gray-300 hover:text-red-400 transition-colors duration-200 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            Sponsor werden
+                        </a>
+                        <a href="about.html" class="block text-gray-300 hover:text-red-400 transition-colors duration-200 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            Vereinsgeschichte
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 max-w-7xl mx-auto">
+        </div>
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-400">
                 <p>&copy; 2026 RedCats Salzburg. Alle Rechte vorbehalten.</p>
             </div>
         </div>
@@ -126,7 +152,6 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Beobachte alle Elemente mit der Klasse 'animate-on-scroll'
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
         observer.observe(el);
     });
