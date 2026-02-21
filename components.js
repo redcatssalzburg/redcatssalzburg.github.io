@@ -6,7 +6,10 @@ function createNavigation() {
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-bold text-red-600">RedCats Salzburg</h1>
+                        <!-- LOGO JETZT KLICKBAR - Link zur Homepage -->
+                        <a href="index.html" class="text-2xl font-bold text-red-600 hover:text-red-700 transition-colors duration-200">
+                            RedCats Salzburg
+                        </a>
                     </div>
                 </div>
                 <div class="hidden md:block">
@@ -45,7 +48,10 @@ function createFooter() {
         <div class="py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
                 <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-xl font-bold text-red-400 mb-4">RedCats Salzburg</h3>
+                    <!-- FOOTER LOGO AUCH KLICKBAR -->
+                    <h3 class="text-xl font-bold text-red-400 mb-4">
+                        <a href="index.html" class="hover:text-red-300 transition-colors duration-200">RedCats Salzburg</a>
+                    </h3>
                     <p class="text-gray-300 mb-4">Der Volleyball-Verein für Leidenschaft, Teamgeist und Erfolg in Salzburg.</p>
                     <div class="flex space-x-4">
                         <a href="#" id="instagram-link" class="text-gray-300 hover:text-red-400 transition-colors duration-200" target="_blank" rel="noopener noreferrer">
