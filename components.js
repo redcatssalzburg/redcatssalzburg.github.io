@@ -50,7 +50,7 @@ function createFooter() {
                     <h3 class="text-xl font-bold text-red-400 mb-4">
                         <a href="index.html" class="hover:text-red-300 transition-colors duration-200">RedCats Salzburg</a>
                     </h3>
-                    <p class="text-gray-300 mb-4">Der Volleyball-Verein für Leidenschaft, Teamgeist und Erfolg in Salzburg.</p>
+                    <p class="text-gray-300 mb-4">Der Volleyball-Verein für Leidenschaft, Teamgeist und Spaß in Salzburg.</p>
                     <div class="flex flex-col space-y-3">
                         <div class="flex space-x-4">
                             <a href="https://www.instagram.com/redcatssalzburg/" id="instagram-link" class="text-gray-300 hover:text-red-400 transition-colors duration-200" target="_blank" rel="noopener noreferrer">
