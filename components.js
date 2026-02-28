@@ -110,6 +110,10 @@ function createFooter() {
         <div class="border-t border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-400">
                 <p>&copy; 2026 RedCats Salzburg. Alle Rechte vorbehalten.</p>
+                
+  <a href="impressum.html">Impressum</a> |
+  <a href="datenschutz.html">Datenschutz</a>
+
             </div>
         </div>
     </footer>
