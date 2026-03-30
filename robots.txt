@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://redcats.github.io/sitemap.xml
+
+Sitemap: https://redcatssalzburg.com/sitemap.xml
